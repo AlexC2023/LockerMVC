@@ -1,0 +1,62 @@
+﻿@model LockerMVC.Models.UsergroupModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>UsergroupModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="groupid" class="control-label"></label>
+                <input asp-for="groupid" class="form-control" />
+                <span asp-validation-for="groupid" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="userid" class="control-label">Selecteaza Utilizator</label>
+              @*  <input asp-for="userid" class="form-control" />
+                <span asp-validation-for="userid" class="text-danger"></span>*@
+                @Html.DropDownList("userid", new SelectList(ViewBag.data1, "userid", "name"))
+            </div>
+            <div class="form-group">
+                <label asp-for="usertypeid" class="control-label">Selecteaza Tip Utilizator</label>
+                @*<input asp-for="usertypeid" class="form-control" />
+                <span asp-validation-for="usertypeid" class="text-danger"></span>*@
+                @Html.DropDownList("usertypeid", new SelectList(ViewBag.data2, "usertypeid", "name"))
+            </div>
+            <div class="form-group">
+                <label asp-for="startdate" class="control-label"></label>
+                <input asp-for="startdate" class="form-control" />
+                <span asp-validation-for="startdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="companyid" class="control-label">Selecteaza Compania</label>
+                @*<input asp-for="companyid" class="form-control" />
+                <span asp-validation-for="companyid" class="text-danger"></span>*@
+                @Html.DropDownList("companyid", new SelectList(ViewBag.data4, "companyid", "companyname"))
+            </div>
+            <div class="form-group">
+                <label asp-for="rolename" class="control-label"></label>
+                <input asp-for="rolename" class="form-control" />
+                <span asp-validation-for="rolename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

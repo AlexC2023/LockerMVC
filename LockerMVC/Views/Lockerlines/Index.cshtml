@@ -1,0 +1,84 @@
+﻿@model IEnumerable<LockerMVC.Models.LockerlineModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dataid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.companyid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.typeid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.appname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.usern)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateadded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.companyid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.typeid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.appname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.usern)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.details)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateadded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.active)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.dataid  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.dataid  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.dataid  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

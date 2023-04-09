@@ -1,0 +1,66 @@
+﻿@model IEnumerable<LockerMVC.Models.CompanyModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.companyid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.companyname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.companyemail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.companycui)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateadded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.companyid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.companyname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.companyemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.companycui)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateadded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.active)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.companyid}) |
+                    @Html.ActionLink("Details", "Details", new { id=item.companyid }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.companyid })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

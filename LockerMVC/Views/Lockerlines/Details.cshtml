@@ -1,0 +1,73 @@
+﻿@model LockerMVC.Models.LockerlineModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LockerlineModel</h4>
+    <hr />
+    <dl class="row">
+      @*  <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataid)
+        </dd>*@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.companyid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.companyid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.typeid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.typeid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.appname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.appname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.usern)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usern)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pass)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pass)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.details)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.details)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dateadded)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dateadded)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.active)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.active)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.dataid  }) |
+    <a asp-action="Index">Back to List</a>
+</div>
